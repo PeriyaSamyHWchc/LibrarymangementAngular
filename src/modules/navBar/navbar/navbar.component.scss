@@ -1,0 +1,16 @@
+@import url('../../../assets/css/variable.scss');
+
+.circle {
+    border-radius: 50%;
+    width: 30px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+
+    .primary::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #fff5;
+    }
+}

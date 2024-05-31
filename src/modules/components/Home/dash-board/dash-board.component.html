@@ -1,0 +1,45 @@
+<div class="page-wrapper">
+    <div class="container">
+        <ul class="infographic-cards">
+            <li class="color-1">
+                <i class="fa-regular fa-lightbulb"></i>
+                <h5>Total Books</h5>
+
+                <div class="number-box">
+                    {{totalbooks}}
+                </div>
+            </li>
+            <li class="color-2">
+                <i class="fa-solid fa-wifi"></i>
+                <h5>Available Books</h5>
+
+
+                <div class="number-box">
+                    {{availbooks}}
+                </div>
+            </li>
+            <li class="color-3">
+                <i class="fa-regular fa-user"></i>
+                <h5>Issued Book</h5>
+
+
+                <div class="number-box">
+                    {{issuedBook}}
+                </div>
+            </li>
+            @if(userID ==1)
+            {
+            <li class="color-4">
+                <i class="fa-brands fa-codepen"></i>
+                <h5>Total User</h5>
+
+
+                <div class="number-box">
+                    {{totaluser}}
+                </div>
+            </li>
+            }
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,135 @@
+    
+    <div class="card">
+        <div class="row p-4">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-5 ">
+                <div class="card p-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="text-center">User Details</h1>
+                        </div>
+                    </div>
+                    <form [formGroup]="registerForm" style="text-align: center;" disable >
+                        <!-- Name -->
+                        <div class="row g-3 align-items-center">
+                            <div class="col-4">
+                                <label class="input-label"> Name <span class="text-danger">*</span> </label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" id="ngName" class="input-1" formControlName="ngName" [ngClass]="{ 'is-invalid':(submitted || forms['ngName'].invalid && (forms['ngName'].dirty || forms['ngName'].touched))
+                                                  &&forms['ngName'].errors?.['required'] }">
+
+                                <div style="color: red;" *ngIf="(submitted || forms['ngName'].invalid && (forms['ngName'].dirty || forms['ngName'].touched) )
+                                                  &&forms['ngName'].errors?.['required']">
+                                    Name is required!
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="row g-3 align-items-center">
+                            <div class="col-4">
+                                <label class="input-label"> Address</label>
+                            </div>
+                            <div class="col-8">
+
+                                <input type="text" id="ngAddress" class="input-1" formControlName="ngAddress">
+                            </div>
+                        </div>
+                       
+
+                        <!-- Phone -->
+
+                        <div class="row g-3 align-items-center">
+                            <div class="col-4">
+                                <label class="input-label">Phone No </label>
+                            </div>
+                            <div class="col-8">
+
+                                <input type="text" class="input-1" id="ngPhone" formControlName="ngPhone"
+                                    (keypress)="numberOnlyValidation($event)">
+                            </div>
+                        </div>
+                        <!-- Email ID -->
+                        <div class="row g-3 align-items-center">
+                            <div class="col-4">
+                                <label class="input-label"> Email ID <span class="text-danger">*</span> </label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" id="ngEmailId" class="input-1" formControlName="ngEmailId" [ngClass]="{ 'is-invalid':(submitted || forms['ngEmailId'].invalid && (forms['ngEmailId'].dirty || forms['ngEmailId'].touched))
+                                                  &&forms['ngEmailId'].errors?.['required'] }">
+
+                                <div style="color: red;" *ngIf="(submitted || forms['ngEmailId'].invalid && (forms['ngEmailId'].dirty || forms['ngEmailId'].touched) )
+                                                  &&forms['ngEmailId'].errors?.['required']">
+                                    Email ID is required!
+                                </div>
+                            </div>
+                        </div>
+                        <!-- UserType -->
+
+                        <div class="row g-3 align-items-center">
+                            <div class="col-4">
+                                <label class="input-label"> User Type <span class="text-danger">*</span>
+                                </label>
+                            </div>
+                            <div class="col-8">
+                                <select style="width: 190px;
+                                height: 32px;" class="input-1" id="ngUserType" formControlName="ngUserType" [ngClass]="{ 'is-invalid':(submitted || forms['ngUserType'].invalid && (forms['ngUserType'].dirty || forms['ngUserType'].touched))
+                                                  &&forms['ngUserType'].errors?.['required'] }">
+                                    <option value="null">Select User Type</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">User</option>
+                                </select>
+
+
+                                <div style="color: red;" *ngIf="(submitted || forms['ngUserType'].invalid && (forms['ngUserType'].dirty || forms['ngUserType'].touched) )
+                                                  &&forms['ngUserType'].errors?.['required']">
+                                    User Type is required!
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Password -->
+
+                        <div class="row g-3 align-items-center">
+                            <div class="col-4">
+                                <label class="input-label"> Password <span class="text-danger">*</span> </label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" id="ngPasswords" class="input-1" formControlName="ngPasswords"
+                                    [ngClass]="{ 'is-invalid':(submitted || forms['ngPasswords'].invalid && (forms['ngPasswords'].dirty || forms['ngPasswords'].touched))
+                                                  &&forms['ngPasswords'].errors?.['required'] }">
+
+                                <div style="color: red;" *ngIf="(submitted || forms['ngPasswords'].invalid && (forms['ngPasswords'].dirty || forms['ngPasswords'].touched) )
+                                                  &&forms['ngPasswords'].errors?.['required']">
+                                    Password is required!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center">
+                           
+                            <div class="col-8">
+
+                                <button *ngIf="edittrue" style="margin-left: 5px;" class="btn btn-secondary btn-rounded btn-02"
+                                    (click)="clearVendorDetail()">Clear
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button *ngIf="edittrue" class="btn btn-primary btn-rounded btn-02" (click)="createFormSave()">
+                                    Update
+                                </button>
+                                <button *ngIf="!edittrue"  class="btn btn-primary btn-rounded btn-02" (click)="editbutton()">
+                                    Edit
+                                </button>
+
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
